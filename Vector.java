@@ -17,4 +17,11 @@ public class Vector {
         this.y=null;
     }
     
+    public void setx(float x){
+        this.x=x;
+    }
+    
+    public void sety(float y){
+        this.y=y;
+    }
 }
