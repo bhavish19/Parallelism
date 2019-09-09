@@ -1,4 +1,4 @@
-package cloudscapes;
+package Parallelism;
 
 import java.io.File;
 import java.io.IOException;

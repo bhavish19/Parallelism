@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cloudscapes;
+package Parallelism;
 
 /**
  *
@@ -15,6 +15,11 @@ public class Vector {
     Vector(){
         this.x=null;
         this.y=null;
+    }
+    
+    Vector(float x,float y){
+        this.x=x;
+        this.y=y;
     }
     
     public void setx(float x){
