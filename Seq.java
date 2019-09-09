@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cloudscapes;
+package Sequential;
+
+import java.util.Scanner;
 
 /**
  *
@@ -14,9 +16,15 @@ public class Seq {
     public static void main(String[] args){
         float sumx=0;
         float sumy=0;
-        Vector wind =new Vector();
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter 'input_file_name.txt' and 'output_file_name.txt' (separated by a space): ");
+        String input = in.next();
+        String output = in.next();
+        System.gc();
+        Vector wind = new Vector();
         CloudData cd = new CloudData();
-        cd.readData("largesample_input.txt");
+        cd.readData(input);
+        long start = System.currentTimeMillis();
         for(int t = 0; t < cd.dimt; t++){
             for (int x=0;x<cd.dimx;x++){
                 for(int y = 0; y < cd.dimy; y++){
@@ -48,7 +56,9 @@ public class Seq {
         float avgy = sumy/cd.dim();
         wind.setx(avgx);
         wind.sety(avgy);
-        cd.writeData("largeoutput.txt", wind);
+        long diff = System.currentTimeMillis() - start;
+        System.out.println("Runtime: " + diff + " milliseconds");
+        cd.writeData(output, wind);
         
     }    
 }
