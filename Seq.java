@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sequential;
 
 import java.util.Scanner;
 
@@ -17,13 +16,14 @@ public class Seq {
         float sumx=0;
         float sumy=0;
         Scanner in = new Scanner(System.in);
+        System.out.println("Sequential programming:");
         System.out.print("Enter 'input_file_name.txt' and 'output_file_name.txt' (separated by a space): ");
         String input = in.next();
         String output = in.next();
-        System.gc();
         Vector wind = new Vector();
         CloudData cd = new CloudData();
         cd.readData(input);
+        System.gc();
         long start = System.currentTimeMillis();
         for(int t = 0; t < cd.dimt; t++){
             for (int x=0;x<cd.dimx;x++){
